@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33723.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RealestaData", "RealestaData\RealestaData.csproj", "{0C73EFC7-AA77-4F32-B0B1-822E51EDA975}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0C73EFC7-AA77-4F32-B0B1-822E51EDA975}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C73EFC7-AA77-4F32-B0B1-822E51EDA975}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C73EFC7-AA77-4F32-B0B1-822E51EDA975}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C73EFC7-AA77-4F32-B0B1-822E51EDA975}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6861F8CC-3E71-4AE5-8CEE-A5A877C8C1CF}
+	EndGlobalSection
+EndGlobal
