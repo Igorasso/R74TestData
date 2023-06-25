@@ -6,8 +6,9 @@
         xmlns:local="clr-namespace:RealestaData"
         mc:Ignorable="d"
         Title="Realesta Info" Height="650" Width="950">
-  
-   
+ 
+
+
     <StackPanel>
         <Label HorizontalAlignment="Center" FontSize="25">Realesta74</Label>
         <StackPanel>
@@ -15,6 +16,8 @@
                 <Label>Server</Label>
                 <ComboBox x:Name="Players_Source_Select_cb" Margin="5" Width="250" IsEnabled="False" ></ComboBox>
                 <Button Margin="5" Width="100" x:Name="Download_Data_Btn" Content="Start" Click="Download_Data_Btn_Click"/>
+                
+                <Label x:Name="StatusLabel" Content="Not working..." Foreground="DarkRed" />
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <Label MinWidth="450" Margin="15"  HorizontalAlignment="Center" FontSize="20">Top 15</Label>
@@ -23,8 +26,8 @@
         </StackPanel>
         <StackPanel>
             <StackPanel Orientation="Horizontal">
-                <DataGrid IsReadOnly="true" MinWidth="350" Margin="10" x:Name="List_Of_Top_Players_Dg" AutoGenerateColumns="False" ItemsSource="{Binding Players}">
-                    <DataGrid.Columns>
+                <DataGrid BorderBrush="Black" IsReadOnly="true" MinWidth="350" Margin="10" x:Name="List_Of_Top_Players_Dg" AutoGenerateColumns="False" ItemsSource="{Binding Players}" LoadingRow="List_Of_Top_Players_Dg_LoadingRow" >
+                    <DataGrid.Columns >
                         <DataGridTextColumn Header="Id" Binding="{Binding Id}" />
                         <DataGridTextColumn Header="Name" Binding="{Binding Name}" />
                         <DataGridTextColumn Header="Vocation" Binding="{Binding Vocation}" />
@@ -47,3 +50,4 @@
         
        </StackPanel>
 </Window>
+
