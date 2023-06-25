@@ -83,13 +83,33 @@ namespace RealestaData
         public string GetStatus(string Url)
         {
             //Thread.Sleep(500);
-            var page = new HtmlWeb().Load(GetDeathsUrl).QuerySelectorAll("table");
+            var page = new HtmlWeb().Load(Url).QuerySelectorAll("table");
 
             string result = page.Any(row => row.InnerText.Contains("online")) != null
                 ? "online"
                 : page.Any(row => row.InnerText.Contains("offline")) != null
                     ? "offline"
                     : "unknown";
+            return result;
+        }
+
+        public string GetStatusTest(string Url)
+        {
+            string result;
+            Random random = new Random();
+            int i = random.Next(0, 4);
+            if (i == 1)
+            {
+                result = "online";
+            }
+            else if (i == 2)
+            {
+                result = "offline";
+            }
+            else
+            {
+                result = "unknown";
+            }
             return result;
         }
     }

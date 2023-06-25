@@ -6,8 +6,23 @@
         xmlns:local="clr-namespace:RealestaData"
         mc:Ignorable="d"
         Title="Realesta Info" Height="650" Width="950">
- 
 
+    <Window.Resources>
+        <Style TargetType="DataGridRow">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding Status}" Value="online">
+                    <Setter Property="Background" Value="Green"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Status}" Value="offline">
+                    <Setter Property="Background" Value="Red"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Status}" Value="unknown">
+                    <Setter Property="Background" Value="White"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+
+    </Window.Resources>
 
     <StackPanel>
         <Label HorizontalAlignment="Center" FontSize="25">Realesta74</Label>
@@ -33,6 +48,7 @@
                         <DataGridTextColumn Header="Vocation" Binding="{Binding Vocation}" />
                         <DataGridTextColumn Header="Players Level" Binding="{Binding PlayersLevel}" />
                         <DataGridTextColumn Header="Experience" Binding="{Binding Experience}" />
+                        <DataGridTextColumn Header="Status" Binding="{Binding Status}" />
                     </DataGrid.Columns>
                 </DataGrid>
 

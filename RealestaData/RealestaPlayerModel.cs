@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Net.NetworkInformation;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace RealestaData
 {
-    internal class RealestaPlayerModel : INotifyPropertyChanged
+    internal class RealestaPlayerModel //: INotifyPropertyChanged
     {
         private string _status = string.Empty;
 
@@ -38,26 +39,34 @@ namespace RealestaData
                 if (_status != value)
                 {
                     _status = value;
-                    OnPropertyChanged(nameof(Status));
+                    //OnPropertyChanged(nameof(Status));
                 }
             }
         }
 
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        //public event PropertyChangedEventHandler PropertyChanged;
 
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
+        //protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        //{
+        //    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        //}
 
-        protected bool SetField<T>(ref T field, T value, [CallerMemberName] string propertyName = null)
-        {
-            if (EqualityComparer<T>.Default.Equals(field, value)) return false;
-            field = value;
-            OnPropertyChanged(propertyName);
-            return true;
-        }
+        //protected bool SetField<T>(ref T field, T value, [CallerMemberName] string propertyName = null)
+        //{
+        //    if (EqualityComparer<T>.Default.Equals(field, value)) return false;
+        //    field = value;
+        //    OnPropertyChanged(propertyName);
+        //    return true;
+        //}
     }
+
+    //internal class PlayersList : ObservableCollection<RealestaPlayerModel>
+    //{
+    //    public PlayersList()
+    //    {
+            
+    //    }
+    //}
 }
 
