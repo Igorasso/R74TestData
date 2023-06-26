@@ -6,24 +6,7 @@
         xmlns:local="clr-namespace:RealestaData"
         mc:Ignorable="d"
         Title="Realesta Info" Height="650" Width="950">
-
-    <Window.Resources>
-        <Style TargetType="DataGridRow">
-            <Style.Triggers>
-                <DataTrigger Binding="{Binding Status}" Value="online">
-                    <Setter Property="Background" Value="Green"/>
-                </DataTrigger>
-                <DataTrigger Binding="{Binding Status}" Value="offline">
-                    <Setter Property="Background" Value="Red"/>
-                </DataTrigger>
-                <DataTrigger Binding="{Binding Status}" Value="unknown">
-                    <Setter Property="Background" Value="White"/>
-                </DataTrigger>
-            </Style.Triggers>
-        </Style>
-
-    </Window.Resources>
-
+   
     <StackPanel>
         <Label HorizontalAlignment="Center" FontSize="25">Realesta74</Label>
         <StackPanel>
@@ -31,6 +14,7 @@
                 <Label>Server</Label>
                 <ComboBox x:Name="Players_Source_Select_cb" Margin="5" Width="250" IsEnabled="False" ></ComboBox>
                 <Button Margin="5" Width="100" x:Name="Download_Data_Btn" Content="Start" Click="Download_Data_Btn_Click"/>
+                <Button Margin="5" Width="100" x:Name="Test_Btn" Content="Start" Click="Test_Btn_Click"/>
                 
                 <Label x:Name="StatusLabel" Content="Not working..." Foreground="DarkRed" />
             </StackPanel>
@@ -41,7 +25,7 @@
         </StackPanel>
         <StackPanel>
             <StackPanel Orientation="Horizontal">
-                <DataGrid BorderBrush="Black" IsReadOnly="true" MinWidth="350" Margin="10" x:Name="List_Of_Top_Players_Dg" AutoGenerateColumns="False" ItemsSource="{Binding Players}" LoadingRow="List_Of_Top_Players_Dg_LoadingRow" >
+                <DataGrid BorderBrush="Black" IsReadOnly="true" MinWidth="350" Margin="10" x:Name="List_Of_Top_Players_Dg" AutoGenerateColumns="False" ItemsSource="{Binding Players}">
                     <DataGrid.Columns >
                         <DataGridTextColumn Header="Id" Binding="{Binding Id}" />
                         <DataGridTextColumn Header="Name" Binding="{Binding Name}" />
@@ -50,6 +34,21 @@
                         <DataGridTextColumn Header="Experience" Binding="{Binding Experience}" />
                         <DataGridTextColumn Header="Status" Binding="{Binding Status}" />
                     </DataGrid.Columns>
+                    <DataGrid.RowStyle>
+                        <Style TargetType="DataGridRow">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Status}" Value="online">
+                                    <Setter Property="Background" Value="Green"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Status}" Value="offline">
+                                    <Setter Property="Background" Value="Red"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Status}" Value="unknown">
+                                    <Setter Property="Background" Value="White"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </DataGrid.RowStyle>
                 </DataGrid>
 
                 <Line></Line>

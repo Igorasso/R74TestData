@@ -42,26 +42,10 @@ namespace RealestaData
                 {
                     urls.Add(href);
                 }
-
-
                 realestaPlayerModelsList.Add(new RealestaPlayerModel(Id, Name, Vocation, PlayersLevel, Experience, href));
             }
-
             return realestaPlayerModelsList;
-
-            //foreach (var url in urls)
-            //{
-            //    Thread.Sleep(500);
-            //    document = web.Load(url);
-
-
-
-            //}
-
-
-
         }
-
         public List<RealestaDeathsModel> GetDeaths()
         {
             List<RealestaDeathsModel> realestaDeathsList = new List<RealestaDeathsModel>();
@@ -79,7 +63,6 @@ namespace RealestaData
 
             return realestaDeathsList;
         }
-
         public string GetStatus(string Url)
         {
             //Thread.Sleep(500);
@@ -92,7 +75,6 @@ namespace RealestaData
                     : "unknown";
             return result;
         }
-
         public string GetStatusTest(string Url)
         {
             string result;
