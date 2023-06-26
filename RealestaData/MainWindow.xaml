@@ -14,9 +14,12 @@
                 <Label>Server</Label>
                 <ComboBox x:Name="Players_Source_Select_cb" Margin="5" Width="250" IsEnabled="False" ></ComboBox>
                 <Button Margin="5" Width="100" x:Name="Download_Data_Btn" Content="Start" Click="Download_Data_Btn_Click"/>
-                <Button Margin="5" Width="100" x:Name="Test_Btn" Content="Start" Click="Test_Btn_Click"/>
-                
                 <Label x:Name="StatusLabel" Content="Not working..." Foreground="DarkRed" />
+            </StackPanel>
+            <Button Background="Yellow" Margin="5" Width="100" x:Name="Test_Btn" Content="Status change test button" Click="Test_Btn_Click"/>
+            <StackPanel Orientation="Horizontal">
+                <Button Margin="308,5,5,5" Width="100" x:Name="Start_Twitch_Bot_Btn" Content="Twitch Start" Click="Start_Twitch_Bot_Btn_Click" IsEnabled="False"/>
+                <Label x:Name="TwitchStatusLabel" Content="Not working..." Foreground="DarkRed" />
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <Label MinWidth="450" Margin="15"  HorizontalAlignment="Center" FontSize="20">Top 15</Label>

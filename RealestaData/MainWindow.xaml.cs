@@ -80,8 +80,8 @@ namespace RealestaData
                         foreach (var Player in Players)
                         {
                             
-                            //Player.Status = realestaScrapper.GetStatus(Player.Href);
-                            //Thread.Sleep(1000);
+                            Player.Status = realestaScrapper.GetStatus(Player.Href);
+                            Thread.Sleep(1000);
                             //PlayersObservableCollection = new ObservableCollection<RealestaPlayerModel>(Players);
                         }
                     }, cancellationTokenSource.Token);
@@ -89,13 +89,6 @@ namespace RealestaData
                 catch (OperationCanceledException)
                 {
                     // Task canceled
-                }
-                foreach (var Player in Players)
-                {
-
-                    //Player.Status = realestaScrapper.GetStatus(Player.Href);
-                    //Thread.Sleep(1000);
-                    //PlayersObservableCollection = new ObservableCollection<RealestaPlayerModel>(Players);
                 }
                 PlayersObservableCollection = new ObservableCollection<RealestaPlayerModel>(Players);
                 List_Of_Top_Players_Dg.ItemsSource = PlayersObservableCollection;
@@ -114,6 +107,7 @@ namespace RealestaData
 
         }
 
+
         private void Test_Btn_Click(object sender, RoutedEventArgs e)
         {
             foreach (var Player in PlayersObservableCollection)
@@ -127,6 +121,11 @@ namespace RealestaData
                     Player.Status = "online";
                 }
             }
+        }
+
+        private async void Start_Twitch_Bot_Btn_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
