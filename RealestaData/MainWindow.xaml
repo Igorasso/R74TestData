@@ -12,10 +12,11 @@
         <StackPanel>
             <StackPanel Orientation="Horizontal">
                 <Label>Server</Label>
+                
                 <ComboBox x:Name="Players_Source_Select_cb" Margin="5" Width="250" IsEnabled="False" ></ComboBox>
                 <Button Margin="5" Width="100" x:Name="Download_Data_Btn" Content="Start" Click="Download_Data_Btn_Click"/>
                 <Label x:Name="StatusLabel" Content="Not working..." Foreground="DarkRed" />
-            </StackPanel>
+                </StackPanel>
             <Button Background="Yellow" Margin="5" Width="100" x:Name="Test_Btn" Content="Status change test button" Click="Test_Btn_Click"/>
             <StackPanel Orientation="Horizontal">
                 <Button Margin="308,5,5,5" Width="100" x:Name="Start_Twitch_Bot_Btn" Content="Twitch Start" Click="Start_Twitch_Bot_Btn_Click" IsEnabled="False"/>
